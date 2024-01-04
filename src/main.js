@@ -26,6 +26,11 @@ iziToast.settings({
   backgroundColor: 'red',
 });
 
+function onError() {
+  gallery.innerHTML = '';
+  iziToast.show();
+}
+
 form.addEventListener('submit', fetchImg);
 
 function fetchImg(event) {
@@ -50,7 +55,7 @@ function fetchImg(event) {
       setTimeout(() => {
         loadingMessage.classList.add('hidden');
         if (images.hits.length === 0) {
-          return iziToast.show();
+          return onError();
         }
         renderImages(images.hits);
       }, 1000);
