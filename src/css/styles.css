@@ -62,13 +62,12 @@
   width: calc((100% - 3 * 24px) / 4);
   box-shadow: 5px 5px 10px #696969;
   overflow: hidden;
-  border: 1px solid #000;
   border-radius: 3%;
-  transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .gallery-item:hover {
-  transform: scale(1.04);
+  transform: scale(0.95);
 }
 
 .gallery-img {
@@ -83,7 +82,7 @@
   column-gap: 4px;
   padding: 4px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-style: normal;
   font-weight: 600;
   line-height: 24px;
