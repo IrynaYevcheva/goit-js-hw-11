@@ -19,16 +19,17 @@ let lightbox = new SimpleLightbox('#gallery a', {
 function onError() {
   gallery.innerHTML = '';
   iziToast.show({
-    close: true,
-    closeOnClick: false,
+    close: false,
+    closeOnClick: true,
     message:
       'Sorry, there are no images matching your search query. Please try again!',
     messageColor: 'white',
-    timeout: 4000,
+    timeout: 2000,
     transitionIn: 'flipInX',
     transitionOut: 'flipOutX',
     position: 'topRight',
     backgroundColor: '#EF4040',
+    progressBar: false,
   });
 }
 
