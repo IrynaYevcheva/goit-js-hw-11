@@ -33,10 +33,6 @@ function onError() {
   });
 }
 
-function hideLoader() {
-  return loadingMessage.classList.add('hidden');
-}
-
 function fetchImg(event) {
   event.preventDefault();
   loadingMessage.classList.remove('hidden');
@@ -66,15 +62,21 @@ function getImg(search) {
         onError();
       }
       renderImages(images);
-      hideLoader();
       lightbox.refresh();
     })
     .catch(error => {
-      iziToast.error();
-      hideLoader();
+      iziToast.error({
+        message: 'ERROR',
+        messageColor: 'white',
+        timeout: 2000,
+        transitionIn: 'flipInX',
+        transitionOut: 'flipOutX',
+        position: 'topRight',
+        progressBar: false,
+      });
     })
     .finally(() => {
-      hideLoader();
+      loadingMessage.classList.add('hidden');
     });
 }
 
